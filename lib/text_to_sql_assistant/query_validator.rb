@@ -3,7 +3,7 @@
 module TextToSqlAssistant
   class QueryValidator
     DANGEROUS_KEYWORDS = %w[INSERT UPDATE DELETE DROP ALTER TRUNCATE CREATE GRANT REVOKE].freeze
-    BLOCKED_PATTERNS = ["INTO OUTFILE", "INTO DUMPFILE", "LOAD_FILE", "BENCHMARK("].freeze
+    BLOCKED_PATTERNS = ["INTO OUTFILE", "INTO DUMPFILE", "LOAD_FILE", "BENCHMARK(", "INFORMATION_SCHEMA"].freeze
 
     def initialize(config)
       @config = config

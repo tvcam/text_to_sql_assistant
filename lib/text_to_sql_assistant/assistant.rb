@@ -77,6 +77,9 @@ module TextToSqlAssistant
     private
 
     def build_provider(provider_arg, api_key_arg, model_arg)
+      # Accept a pre-built provider instance directly
+      return provider_arg if provider_arg.is_a?(Providers::Base)
+
       provider_name = provider_arg || @config.provider
       api_key = api_key_arg || @config.api_key
       model = model_arg || @config.effective_model
